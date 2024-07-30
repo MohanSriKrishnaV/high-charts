@@ -1,0 +1,34 @@
+<div *ngIf="filterData">
+    <div *ngFor="let filter of filterData.filters">
+        <div *ngIf="filter.type === 'date'">
+            <label [for]="filter.id">{{ filter.id }}:</label>
+            <input type="date" [id]="filter.id" [(ngModel)]="filter.defaultValue" />
+        </div>
+
+        <div *ngIf="filter.type === 'single-select'">
+            <label [for]="filter.id">{{ filter.id }}:</label>
+            <select [id]="filter.id" [(ngModel)]="filter.defaultValue">
+                <option *ngFor="let option of filter.options" [value]="option.value">{{ option.label }}</option>
+            </select>
+        </div>
+
+        <div *ngIf="filter.type === 'multi-select'">
+            <label [for]="filter.id">{{ filter.id }}:</label>
+            <select [id]="filter.id" multiple [(ngModel)]="filter.defaultValue">
+                <option *ngFor="let option of filter.options" [value]="option.value">{{ option.label }}</option>
+            </select>
+        </div>
+
+        <div *ngIf="filter.type === 'checkbox-group'">
+            <label>{{ filter.id }}:</label>
+            <div *ngFor="let option of filter.options">
+                <input type="checkbox" [id]="option.value" [value]="option.value"
+                    (change)="onCheckboxChange(filter, option.value, $event)"
+                    [checked]="filter.defaultValue?.includes(option.value)">
+                <label [for]="option.value">{{ option.label }}</label>
+            </div>
+        </div>
+    </div>
+
+    <button (click)="onApply()">Apply</button>
+</div>

@@ -1,1 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
+/* General styles for h3 elements */
+h3 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-left: 5px solid #007bff;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+/* ID-specific styles for additional customization */
+#title1 {
+    color: #0056b3;
+}
+
+#title2 {
+    color: #28a745;
+}
+
+#title3 {
+    color: #dc3545;
+}
+
+#title4 {
+    color: #ffc107;
+}
+
+#title5 {
+    color: #17a2b8;
+}
+
+#title6 {
+    color: #6c757d;
+}
+
+#title7 {
+    color: #343a40;
+}
+
+/* General container styles */
+div[id^="container"] {
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

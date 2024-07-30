@@ -1,0 +1,4 @@
+<div class="dashboard">
+    <app-filter [filterData]="filterParam" (applyFilters)="handleApplyFilters($event)"></app-filter>
+    <app-double-bar [filters]="appliedFilter" [widgetConfig]="widgetConfigs"></app-double-bar>
+</div>

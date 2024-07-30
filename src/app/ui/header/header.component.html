@@ -1,0 +1,11 @@
+<header>
+    <nav>
+        <ul>
+            <li *ngFor="let item of menuItems">
+                <button (click)="navigateTo(item.route)" [ngClass]="{'active': isActive(item.route)}">
+                    {{ item.name }}
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>
